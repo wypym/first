@@ -1,0 +1,95 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;}
+
+/*-------------------header-------------------*/
+#header_wrak{
+	height: 32px;
+	background: #eeeeee;
+}
+header{
+	height: 32px;
+	background: #eeeeee;	
+}
+header .list1{
+	height: 32px;
+	line-height: 32px;
+	font-size: 12px;
+	color: #333333;
+	float: right;
+}
+header .list1 li{
+	margin-right: 16px;
+	float: left;
+}
+header .list1 li:nth-child(3){
+	color: #cccccc;
+}
+header .list1 li span{
+	color: #d32402;
+}
+header .list1 .list2{margin-right: 0;}
+header .list1 .list2 a span{
+	margin-left: 5px;
+	display: inline-block;
+	border: 6px solid #eeeeee;
+	border-top: 6px solid red;
+}
+header .list1 .list-2{
+	border: 2px solid red;
+	position: absolute;
+	display: none;
+	z-index: 100;
+	background: #fff;	
+}
+header .list1 .list-2 li{
+	text-align: center;
+	width: 60px;
+	clear: both;
+	margin-right: 2px;	
+}
+header .list1 .list2:hover{
+	background: #f1320a;
+}
+header .list1 .list2:hover a span{
+	border: 6px solid red;
+	border-top: 6px solid #eeeeee;
+}
+header .list1 .list2:hover .list-2{
+	display: block;
+}
+.list-2 li a:hover{
+	color: deeppink;
+}
+
+/*-------------------footer-------------------*/
+#footer{
+	height: 160px;
+	margin-top: 24px;
+	border-top: 2px solid #dddddd;
+	padding-top: 30px;
+}
+#footer p{
+	text-align: center;
+	font-size: 12px;
+	height: 24px;
+	line-height: 24px;
+	color: #999999;
+}
+#footer p a{
+	font-size: 16px;
+	font-weight: 900;
+}
+#footer p a:nth-child(1){
+	color: #53585f;
+	margin-right: 3px;
+}
+#footer p a:nth-child(2){
+	color: #c62717;
+	margin-left: 3px;
+}

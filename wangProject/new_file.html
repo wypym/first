@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+       
+    </head>
+    <body> 
+    	<input type="text" name="btn" id="btn" value="" />
+    	<div id="box">
+    		
+    	</div>
+    </body>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+//  	var arr = ['a','bc','d','d','e','a','b','f','g','f','f','f','f','f','f','f','f'];
+//  	var list =[];
+//  	for(var i=0;i<arr.length;i++){
+//  		for(var j=i+1;j<arr.length;j++){
+//  			if(arr[i]==arr[j]){
+//  				arr.splice(j,1);
+//  				j--
+//  			}
+//  		}
+//  	}  
+		var box = document.getElementById('box');
+		var btn = document.getElementById('btn');
+		btn.onfocus = function(){
+			document.onkeydown = function(e){
+				var e= e || window.event;
+				if(e.keyCode==13){
+					box.innerHTML = btn.value;
+				}
+			
+			}
+		}
+		https://sp1.baidu.com/5b1ZeDe5KgQFm2e88IuM_a/wb.gif?type=3&fm=flow_monitor&data=%5B%7B%7D%5D&q=111&qid=e9ae6fec000496df&rsv_did=2b3eda8008aafc5acb7a068d53a6df6b&rsv_tn=baidu&rsv_sid=1450_21094_20927&t=1539860134769
+//  	console.log(arr);
+//  	var createID=(n)=>{
+//		var arr="qwertyuiopasdfghjklzxcvbnm";
+//		var thisid="";
+//		for (var i = 0; i < n; i++) {
+//			thisid += arr[Math.floor(Math.random()*26)];
+//		}
+//			return thisid;
+//		}
+//		console.log(createID(5));
+		
+//  	var box = document.getElementById('box');
+//  	box.onclick = function(e){
+//  		var e = e || window.event;
+//  		var target = e.target || e.srcElement;
+//  		if(target.nodeName.toUpperCase() ==="SPAN"){
+//  			alert("span");
+//  		}s
+//  	}
+//  	$(function(){
+//  		$('#box').delegate('span','click',function(){
+//  			alert("span");
+//  		})
+//  	})
+    </script>
+
+</html>

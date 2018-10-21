@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册界面</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<body>
+		<div id="header_wrak">
+			<header>
+			<ul class="list1">
+				<li><a href="denglu.html">登录</a></li>
+				<li><a href="#">免费注册<span>送50元</span></a></li>
+				<li>|</li>
+				<li><a href="#">电话订购会员登录<span>送50元</span></a></li>
+				<li class="list2">
+					<a href="#">我的风尚<span></span></a>
+					<ul class="list-2">
+						<li><a href="#">我的订单</a></li>
+						<li><a href="#">我的收藏</a></li>
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<div id="nav1">
+			<h1>
+				<a href="#">
+					<img src="img/logo.png"/>
+				</a>
+			</h1>
+			<p>欢迎注册</p>
+		</div>
+		<div id="zhuce">
+			<div id="zc">
+				<ul>
+					<li>新用户注册</li>
+					<li><a href="denglu.html">电话订购会员登录</a></li>
+				</ul>
+				<p>我已经注册，现在就<a href="denglu.html">登录</a></p>
+			</div>
+			<div id="zc-bottom">
+				<div class="zcbo-left">
+					<img src="img/bg3.jpg"/>
+				</div>
+				<form action="" method="get">
+					<p>
+						<label for="phone"><span class="pred">*</span>手机:</label>
+						<input type="text" name="phone" id="phone" value="" />
+						<span id="s1">请填写你的手机号码</span>
+					</p>
+					<p>
+						<label for="duan"><span class="pred">*</span>短信验证码:</label>
+						<input type="text" name="duan" id="duan" value="" />
+						<a href="#" id="duan1">获取验证码</a>
+						<span id="s2">请填写收到的短信验证码 PS:60秒内不能再次发送</span>
+					</p>
+					<p>
+						<label for="email"><span class="pred">*</span>邮箱:</label>
+						<input type="text" name="email" id="email" value="" />
+						<span id="s3">订单信息和优惠信息通过邮件发送</span>
+					</p>
+					<p>
+						<label for="psw"><span class="pred">*</span>设置密码:</label>
+						<input type="password" name="pas" id="psw" value="" />
+						<span id="s4">6-20位，区分大小写</span>
+					</p>
+					<p>
+						<label for="age"><span class="pred">*</span>确认密码:</label>
+						<input type="password" name="age" id="age" value="" />
+						<span id="s5">请在输入一次上面填写的密码</span>
+					</p>
+					<p>
+						<label for="yan"><span class="pred">*</span>验证码:</label>
+						<input type="text" name="yan" id="yan" value="" />
+						
+						<span>更换</span>
+					</p>
+					<p>
+						<input type="checkbox" checked="checked" id="checkbox"/>
+						<span>我已阅读并同意《风尚用户注册协议》</span>
+					</p>
+					<button id="btn">立即注册</button>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<p><a href="#">触屏版</a><a href="#">电脑版</a></p>
+			<p>ICP经营许可证：赣ICP备15000001号</p>
+			<p>24小时客服热线:4001-677-077</p>
+			<p>Copyright 2008-2014,www.fstvgo.com风尚购物版权所有</p>
+			<p>本网站用字经北京北大方正电子有限公司授权许可</p>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js"></script>
+	<!--<script src="js/cookie.js"></script>-->
+	<script type="text/javascript">
+		$(function(){
+			var str1 = /^\d{11}$/;
+			var str2 = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+			var str3 = /^[1-9a-zA-Z]{6,20}$/;
+			var flag = true;
+			var $num = parseInt(Math.random()*(999999-100000+1)+100000);
+			var arr = [];
+			$("#phone").focus(function(){
+				if(!flag){
+					$(this).val("")
+				}
+			})
+			$('#phone').blur(function(){
+				if(str1.test($(this).val())){
+					$('#s1').html("输入正确");
+					$('#s1').css({"color":"green"})
+					flag = true;
+					arr.push($(this).val());
+				}else{
+					$('#s1').html("11位纯数字");
+					$('#s1').css({"color":"red"})
+					flag = false;
+				}
+			})
+			$("#email").focus(function(){
+				if(!flag){
+					$(this).val("")
+				}
+			})
+			$('#email').blur(function(){
+				if(str2.test($(this).val())){
+					$('#s3').html("输入正确");
+					$('#s3').css({"color":"green"})
+					flag = true;
+					arr.push($(this).val());
+				}else{
+					$('#s3').html("邮箱输入错误");
+					$('#s3').css({"color":"red"})
+					flag = false;
+				}
+			})
+			$("#psw").focus(function(){
+				if(!flag){
+					$(this).val("")
+				}
+			})
+			$('#psw').blur(function(){
+				if(str3.test($(this).val())){
+					$('#s4').html("输入正确");
+					$('#s4').css({"color":"green"})
+					flag = true;
+					arr.push($(this).val());
+				}else{
+					$('#s4').html("请输入数字和字母6到18位");
+					$('#s4').css({"color":"red"})
+					flag = false;
+				}
+			})
+			$("#age").focus(function(){
+				if(!flag){
+					$(this).val("")
+				}
+			})
+			$('#age').blur(function(){
+				if($(this).val() == $("#psw").val() && $("#psw").val() !=""){
+					$('#s5').html("输入正确");
+					$('#s5').css({"color":"green"})
+					flag = true;
+					arr.push($(this).val());
+				}else{
+					$('#s5').html("两次密码输入不一致");
+					$('#s5').css({"color":"red"})
+					flag = false;
+				}
+			})
+			$('#duan1').click(function(){
+			
+				$(this).html($num);
+			})
+			$("#duan").focus(function(){
+				if(!flag){
+					$(this).val("")
+				}
+			})
+			$('#duan').blur(function(){
+				if($(this).val() == $num){
+					$('#s2').html("验证码正确")
+					$('#s2').css({"color":"green"})		
+					flag = true;
+					arr.push($(this).val());
+				}else{
+					$('#s2').html("验证码输入错误")
+					$('#s2').css({"color":"red"})
+					flag = false;
+				}
+			})
+			
+			$('#btn').click(function(){
+				if(arr.length < 5){
+					arr =[];
+					alert("信息填写有误");				
+				}else{
+					var date=new Date();
+					date.setDate(date.getDate()+10);
+					document.cookie="num"+ $('#phone').val() +'='+'{"zhang":'+$('#phone').val()+',"mima":'+$("#psw").val()+'}'+';expires:'+date+";path=/;";
+					alert("注册成功");
+				}
+				
+				/*
+					'{"账号":phone,"密码":psw,"邮箱":"email"}'
+					'{"zhang":'+$('#phone').val()+',"mima":'+$("#psw").val()+',"email":'+$('#email').val()+'}'
+				*/
+				
+			})
+		})
+			
+				
+	</script>
+</html>
