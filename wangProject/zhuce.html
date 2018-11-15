@@ -106,91 +106,76 @@
 				if(!flag){
 					$(this).val("")
 				}
-			})
-			$('#phone').blur(function(){
+			}).blur(function(){
 				if(str1.test($(this).val())){
-					$('#s1').html("输入正确");
-					$('#s1').css({"color":"green"})
+					$('#s1').html("输入正确").css({"color":"green"});
 					flag = true;
 					arr.push($(this).val());
 				}else{
-					$('#s1').html("11位纯数字");
-					$('#s1').css({"color":"red"})
+					$('#s1').html("11位纯数字").css({"color":"red"});
 					flag = false;
 				}
-			})
+			});
 			$("#email").focus(function(){
 				if(!flag){
 					$(this).val("")
 				}
-			})
-			$('#email').blur(function(){
+			}).blur(function(){
 				if(str2.test($(this).val())){
-					$('#s3').html("输入正确");
-					$('#s3').css({"color":"green"})
+					$('#s3').html("输入正确").css({"color":"green"});
 					flag = true;
 					arr.push($(this).val());
 				}else{
-					$('#s3').html("邮箱输入错误");
-					$('#s3').css({"color":"red"})
+					$('#s3').html("邮箱输入错误").css({"color":"red"});
 					flag = false;
 				}
-			})
+			});
 			$("#psw").focus(function(){
 				if(!flag){
 					$(this).val("")
 				}
-			})
-			$('#psw').blur(function(){
+			}).blur(function(){
 				if(str3.test($(this).val())){
-					$('#s4').html("输入正确");
-					$('#s4').css({"color":"green"})
+					$('#s4').html("输入正确").css({"color":"green"});
 					flag = true;
 					arr.push($(this).val());
 				}else{
-					$('#s4').html("请输入数字和字母6到18位");
-					$('#s4').css({"color":"red"})
+					$('#s4').html("请输入数字和字母6到18位").css({"color":"red"});
 					flag = false;
 				}
-			})
+			});
 			$("#age").focus(function(){
 				if(!flag){
 					$(this).val("")
 				}
-			})
-			$('#age').blur(function(){
+			}).blur(function(){
 				if($(this).val() == $("#psw").val() && $("#psw").val() !=""){
-					$('#s5').html("输入正确");
-					$('#s5').css({"color":"green"})
+					$('#s5').html("输入正确").css({"color":"green"});
 					flag = true;
 					arr.push($(this).val());
 				}else{
-					$('#s5').html("两次密码输入不一致");
-					$('#s5').css({"color":"red"})
+					$('#s5').html("两次密码输入不一致").css({"color":"red"});
 					flag = false;
 				}
-			})
+			});
 			$('#duan1').click(function(){
 			
 				$(this).html($num);
-			})
-			$("#duan").focus(function(){
+			}).focus(function(){
 				if(!flag){
 					$(this).val("")
 				}
-			})
+			});
 			$('#duan').blur(function(){
 				if($(this).val() == $num){
-					$('#s2').html("验证码正确")
-					$('#s2').css({"color":"green"})		
+					$('#s2').html("验证码正确").css({"color":"green"});
 					flag = true;
 					arr.push($(this).val());
 				}else{
-					$('#s2').html("验证码输入错误")
-					$('#s2').css({"color":"red"})
+					$('#s2').html("验证码输入错误").css({"color":"red"});
 					flag = false;
 				}
-			})
+			});
 			
 			$('#btn').click(function(){
 				if(arr.length < 5){
@@ -199,13 +184,12 @@
 				}else{
 					var date=new Date();
 					date.setDate(date.getDate()+10);
-					document.cookie="num"+ $('#phone').val() +'='+'{"zhang":'+$('#phone').val()+',"mima":'+$("#psw").val()+'}'+';expires:'+date+";path=/;";
+					document.cookie="num"+ $('#phone').val() +'='+'{"zhang":"'+$('#phone').val()+'","mima":"'+$("#psw").val()+'"}'+';expires:'+date+";path=/;";
 					alert("注册成功");
 				}
-				
 				/*
 					'{"账号":phone,"密码":psw,"邮箱":"email"}'
-					'{"zhang":'+$('#phone').val()+',"mima":'+$("#psw").val()+',"email":'+$('#email').val()+'}'
+					'{"zhang":'+$('#phone').val()+',"mima":"'+$("#psw").val()+'","email":'+$('#email').val()+'}'
 				*/
 				
 			})

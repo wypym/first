@@ -653,10 +653,14 @@ header,#nav,#section,#mian,#main,#last,#nav1,#zhuce,#denglu,#details,#introd,.li
 .zcbo-left img{
 	margin-top: 24px;
 }
+#zc-bottom form{
+	float: right;
+	width: 750px;
+}
 #zc-bottom form p{
 	height: 52px;
 	line-height: 52px;
-	
+	overflow: hidden;
 }
 #zc-bottom form label{
 	float: left;
